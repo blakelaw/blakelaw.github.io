@@ -1,22 +1,18 @@
 ---
-layout: page
-title: "Test1"
-description: a deep dive into NBA referee impact on gameplay
-img: /images/profile_photo.jpeg
-importance: 1
-category: work
-byline: Blake Law
-date: 2023-08-01
+title: "Decoding the Decisions"
+excerpt: "a deep dive into NBA referee impact on gameplay"
+image: "/images/12.jpg"
+collection: portfolio
 ---
-<div style="margin-left: 50px; margin-right: 50px;">
+
 
 Across every major sport, fans will regularly boo referees they feel have wrongly called a play. They'll emphatically explain how they're being paid off and rigging it in real time. Basketball is no exception. And indeed, there have been 
 <a href="https://www.npr.org/2008/06/12/91415111/ex-referee-says-2002-nba-playoff-was-rigged">cases</a> of referees interfering and throwing a game, but how large of an effect are they really having on a daily basis?
 
 To answer this, I pored through a <a href="https://www.kaggle.com/datasets/wyattowalsh/basketball">database</a> of over 64,000 NBA games that includes box scores, play-by-play data, and a most importantly, a list of referees for each game. After preprocessing the SQL database so that I had i) the two teams playing ii) the scores of each team, and iii) the three referees for the game, I was ready to start digging in. 
 
-<hr>
-<h4>Method 1: Points added from referee</h4>
+
+<h4 style="font-size: 24px;">Method 1: Points added from referee</h4>
 
 The most basic way of seeing how much a particular referee adds to a team is by calculating the average score of the team over the dataset (in this particular case, starting in the 1996 NBA season), and then comparing that the to average score of the team when a particular referee officiates the game. This is easier to do in Python, after connecting to the SQL database with the sqlite3 library, then creating a dataframe in pandas from this.
 
@@ -37,18 +33,17 @@ A few things stand out in this top ten. Nine of ten of the entries are positive,
 
 
 
-To investigate, let's visualize. We'll overlay all the of Wizard's games <i>(when we do this, we start to see the dataset <a href="https://www.kaggle.com/datasets/wyattowalsh/basketball/discussion/402040">isn't complete</a> in certain years, mostly notably 2018, stressing the importance of having good data)</i> and Wizard's games officiated by Gediminias Petraitas in Tableau. Each solid black dot represents a game officiated by Petraitas. 
+To investigate, let's visualize. We'll overlay all the of Wizard's games <i>(when we do this, we start to see the dataset <a href="https://www.kaggle.com/datasets/wyattowalsh/basketball/discussion/402040">isn't complete</a> in certain years, mostly notably 2018, stressing the importance of having good data)</i> and Wizard's games officiated by Gediminias Petraitas in Tableau. Each solid black dot represents a game officiated by Petraitas.
 
 <div class="text-center">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/Ged.png" title="example image" class="img-fluid rounded z-depth-1" width="90%" %}
+        <img src="/images/Ged.png" alt="example image" style="max-width:90%; border: 1px solid #ccc; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);" />
     </div>
 </div>
 
-
 This visualization tells a much different story. Instead of Petraitas consistently adding double digits above the Wizards' expected score, he happened to officiate games when the Wizard's had their highest scoring seasons. Indeed, this is not just a Wizards phenomenon, but a league-wide one. The Wizards average points per game (PPG) in the 2014-2015 season was 98.5, 17th in the league, and increased to 114.4 PPG in the 2019-2020 season, a very significant increase, placing 7th in the league by PPG. Over the same period, the NBA league average increased from 100.0 to 111.8, likely due to more emphasis on three pointers and increasingly faster paced games.
-<hr> 
-<h4>Method 2: Elo System</h4>
+
+<h4 style="font-size: 24px;">Method 2: Elo System</h4>
 
 Instead of taking the average over the entire dataset, we can create an "elo" system where a referee will receive a harsher penalty if the difference deviates more egregiously to the team's average around the same time. For a given game, we'll subtract the score of the game officiated by a particular referee from the average in the same year instead. 
 
@@ -59,12 +54,11 @@ From this, we have a much less extreme picture. The top ten are again shown but 
 <iframe title="Largest Referee-Elo Discrepancies" aria-label="Table" id="datawrapper-chart-TPG4L" src="https://datawrapper.dwcdn.net/TPG4L/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="509" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r=0;r<e.length;r++)if(e[r].contentWindow===a.source){var i=a.data["datawrapper-height"][t]+"px";e[r].style.height=i}}}))}();
 </script>
 
-In this ranking, no referee-team combination reaches double digits. In fact, we approach a difference of only 5 points very quickly. Notice that the Petraitis combination we analyzed earlier is ranked second. Mark Ayotte, who has officiated 49 Knicks games in our dataset, benefits the team by nearly 7.5 points on average. Like before, let's visualize this with Tableau to see if the deviation does indeed look extreme. 
-
+In this ranking, no referee-team combination reaches double digits. In fact, we approach a difference of only 5 points very quickly. Notice that the Petraitis combination we analyzed earlier is ranked second. Mark Ayotte, who has officiated 49 Knicks games in our dataset, benefits the team by nearly 7.5 points on average. Like before, let's visualize this with Tableau to see if the deviation does indeed look extreme.
 
 <div class="text-center">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/Ayotte.png" title="example image" class="img-fluid rounded z-depth-1" width="90%" %}
+        <img src="/images/Ayotte.png" alt="example image" style="max-width:90%; border: 1px solid #ccc; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);" />
     </div>
 </div>
 
@@ -72,7 +66,7 @@ Similarly, there seems to be no clear pattern of Mark Ayotte helping the Knicks 
 
 So far, we haven't found any convincing evidence that any referees in the league systematically favor or hurt particular teams. Of course, this neglects high-stakes playoffs games or one-off occurrences, but those must be looked at ad hoc and can't rely on statistics, as a major call with five seconds left that nets a team two points with only a few seconds left is statistically the same as a shooting foul two minutes into the first quarter. 
 
-<h4>Method 3: Impact Score</h4>
+<h4 style="font-size: 24px;">Method 3: Impact Score</h4>
 
 So far we've only focused on points and only worked with subtracting means from other means. However, we can go much further. Rather than just focus on the points for each game, we will focus on <i>all</i> metrics provided. In addition to points, the original database also contains the following for each team in a given game: field goals made, field goal percentage, three pointers made, three point percentage, free throws made, free throw percentage, offensive rebounds, defensive rebounds, total rebounds, assists, steals, blocks, turnovers, and personal fouls. That's a lot more to work with than we were before. However, there's an issue: how do we work with so many dimensions at once?
 
@@ -113,8 +107,7 @@ data_with_scores <- cbind(data_for_pca, scores)
 
 Notice how two of the parameters for prcomp are `scale. = TRUE` and `center = TRUE`. This means we didn't necessarily have to standardize it beforehand, but it's nice to do it on the original dataframe in case we wanted to use it elsewhere where this might not be an option. Anyway, let's look at the results and interpret the principal components. First, we're going to look at the relative weights assigned to each variable, also known as loadings. This can be done by running `print(pca_result$rotation)`:
 
-
-{% include PCAtable.html %}
+{% include my_table2.html %}
 
 
 That's a lot to look at, even after rounding each loading to three decimal places. Thankfully, PCA makes things easier, not harder. We first column, labeled PC1, has the largest variance compared to each subsequent principal component. We're going to just focus in on the first two columns. Reading off the first and second column:
@@ -145,8 +138,4 @@ However, a few caveats. It's more than likely Referees A and F are Dick Bavetta 
 
 <b>Matt Kalio & Danielle Scott</b>: Kalio and Scott are  relative newcomers, only beginning to officiate games since the pandemic. It's very possible that his current aberration is just statistical noise. 
 
-<hr>
-<h4>Conclusion</h4>
-
-
-</div>
+<h4 style="font-size: 24px;">Conclusion</h4>

@@ -10,6 +10,7 @@
   -webkit-animation-delay: 0.15s;
           animation-delay: 0.15s;
   z-index: 20;
+  border-bottom: 1px solid #8e8282;
 
   &__inner-wrap {
     @include container;
