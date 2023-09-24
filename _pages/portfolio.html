@@ -5,10 +5,64 @@ permalink: /portfolio/
 author_profile: true
 ---
 
-{% include base_path %}
+<style>
+  .article-image img {
+    height: 150px !important;
+    width: 150px !important;
+    object-fit: cover; /* This will crop the images to fit the fixed dimensions */
+  }
+</style>
 
+<div class="article-table">
+  <!-- Portfolio Item 1 -->
+  <div class="article-row">
+    <div class="article-content">
+      <div class="article-title"><a href="https://github.com/blakelaw/Duplicate-Account-Finder">Duplicate Account Detection with NLP</a></div>
+      <div class="article-date">August 2023</div>
+      <div class="article-description">Created a method to flag duplicate accounts through NLP and cluster analysis</div>
+      <div class="article-tools"><strong>Tools:</strong> Python, pandas, SQL, R, SciPy, Tableau</div>
+    </div>
+    <div class="article-image">
+      <img src="/images/words.png" alt="Portfolio Item 1 Title">
+    </div>
+  </div>
 
-{% for post in site.portfolio %}
-  {% include archive-single.html %}
-{% endfor %}
+  <!-- Portfolio Item 2 -->
+  <div class="article-row">
+    <div class="article-content">
+      <div class="article-title"><a href="/portfolio/nba-referee/">NBA Referee Neutrality Investigation</a></div>
+      <div class="article-date">June 2023</div>
+      <div class="article-description">Created quantitative measures to assess referee bias</div>
+      <div class="article-tools"><strong>Tools: </strong>Python, NLTK, pandas, scikit-learn, SciPy, Matplotlib</div>
+    </div>
+    <div class="article-image">
+      <img src="/images/IMG_0627.jpg" alt="Portfolio Item 2 Title">
+    </div>
+  </div>
 
+  <div class="article-row">
+    <div class="article-content">
+      <div class="article-title"><a href="https://github.com/blakelaw/Cobb-Microregion">Identifying Cultural Microregions in Georgia</a></div>
+      <div class="article-date">Work in Progress</div>
+      <div class="article-description">Created algorithm to identify cultural areas with NLP and HDBSCAN</div>
+      <div class="article-tools"><strong>Tools: </strong>Python, OpenStreetMap, pandas, scikit-learn, JSON</div>
+    </div>
+    <div class="article-image">
+      <img src="/images/dbscan.png" alt="Portfolio Item 2 Title">
+    </div>
+  </div>
+
+  <div class="article-row">
+    <div class="article-content">
+      <div class="article-title">Quantifying Media Slant: A Computational Method</div>
+      <div class="article-date">Completed (writeup expected October 2024)</div>
+      <div class="article-description">Created method to assess media bias through fine-tuning LLMs on sample text</div>
+      <div class="article-tools"><strong>Tools: </strong>Python, PyTorch, Hugging Face, Azure, pandas</div>
+    </div>
+    <div class="article-image">
+      <img src="/images/Compass.png" alt="Portfolio Item 2 Title">
+    </div>
+  </div>
+
+  <!-- Add more portfolio items here as needed -->
+</div>

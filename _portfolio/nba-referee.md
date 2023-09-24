@@ -5,6 +5,7 @@ image: "/images/12.jpg"
 collection: portfolio
 ---
 
+*Find the source code for the article [here](https://github.com/blakelaw/Referee-Analysis).* 
 
 Across every major sport, fans will regularly boo referees they feel have wrongly called a play. They'll emphatically explain how they're being paid off and rigging it in real time. Basketball is no exception. And indeed, there have been 
 <a href="https://www.npr.org/2008/06/12/91415111/ex-referee-says-2002-nba-playoff-was-rigged">cases</a> of referees interfering and throwing a game, but how large of an effect are they really having on a daily basis?
