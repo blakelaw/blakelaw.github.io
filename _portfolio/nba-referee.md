@@ -7,40 +7,42 @@ collection: portfolio
 
 *Find the source code for the article [here](https://github.com/blakelaw/Referee-Analysis).* 
 
-Across every major sport, fans will regularly boo referees they feel have wrongly called a play. They will emphatically explain how they're being paid off and rigging it in real time. Basketball is no exception. And indeed, there may have been 
+Across every sport, fans will boo referees when a call doesn't go their way. They emphatically explain how they're being paid off and rigging it in real time. Basketball is no exception. And indeed, there may have been 
 <a href="https://www.npr.org/2008/06/12/91415111/ex-referee-says-2002-nba-playoff-was-rigged">cases</a> of referees interfering and throwing a game, but how large of an effect are they really having on a daily basis?
 
-To answer this, I pored through a <a href="https://www.kaggle.com/datasets/wyattowalsh/basketball">database</a> of over 64,000 NBA games that includes box scores, play-by-play data, and a most importantly, a list of referees for each game. After preprocessing the SQL database so that I had i) the two teams playing ii) the scores of each team, and iii) the three referees for the game, I was ready to start digging in. 
+To answer this, I pored through a <a href="https://www.kaggle.com/datasets/wyattowalsh/basketball">database</a> of over 64,000 NBA games that includes box scores, play-by-play data, and a most importantly, a list of referees for each game. I preprocessed the SQL database of games so that I had the two teams playing, their scores, and the three referees for the game, and was ready to dive in.
 
 
 <h4 style="font-size: 24px;">Method 1: Points added from referee</h4>
 
-The most basic way of seeing how much a particular referee adds to a team is by calculating the average score of the team over the dataset (in this particular case, starting in the 1996 NBA season), and then comparing that the to average score of the team when a particular referee officiates the game. This is easier to do in Python, after connecting to the SQL database with the sqlite3 library, then creating a dataframe in pandas from this.
+The most basic way of seeing how much a particular referee impacts a team is by calculating the average score of the team over the dataset (in this particular case, starting in the 1996 NBA season -- referee data isn't included before then), and then comparing that the to average score of the team when a particular referee officiates the game. This is easy to do in Python by connecting to the SQL database with the sqlite3 library then creating a dataframe in pandas.
 
-After conducting exploratory analysis on the dataframe, a new table was generated showing the specific referee and NBA team combinations along with the differential compared to how that team normally performs. To ensure the analysis includes only referees who have officiated a substantial number of games for a given team, a threshold of a minimum of 30 games officiated per team was set. Presented below are the top ten referee-team pairings ranked by the absolute value of the difference:
+After conducting exploratory analysis on the dataframe, a new table was generated showing the specific referee and NBA team combinations along with the differential compared to how that team normally performs. To ensure the analysis includes only referees who have officiated a substantial number of games for a given team, a threshold of a minimum of 30 games officiated per team was set. Presented below are the top ten referee-team pairings ranked by the absolute value of the difference in average scores.
 
 <iframe title="Largest Referee-Team Discrepancies in Total Scoring" aria-label="Table" id="datawrapper-chart-zlDrb" src="https://datawrapper.dwcdn.net/zlDrb/7/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="542" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r=0;r<e.length;r++)if(e[r].contentWindow===a.source){var i=a.data["datawrapper-height"][t]+"px";e[r].style.height=i}}}))}();
 </script>
 
 A few things stand out in this top ten. Nine of ten of the entries are positive, indicating that the referee gave the particular team an advantage, while only one (when Kevin Fehr officiates the Clippers) creates a disadvantage. Does this mean that referees are more interested in helping certain teams than hurting others? There are multiple repeated referee names among the top results, including Gediminias Petraitas, Tyler Ford, and Mitchell Ervin, each appearing twice. These deviations are quite large — all double digits. Is Gediminas Petraitis really having a <b>sixteen point difference</b> on games?
 
-
+<hr>
 <div class="text-center">
     <div class="col-sm mt-3 mt-md-0">
         <img src="/images/Dist.png" alt="example image" style="max-width:90%; border: 1px solid #ccc; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);" />
     </div>
 </div>
-
+<hr>
 
 
 
 To further investigate this discrepancy, the data was visualized by overlaying all Wizard's games, including those officiated by Gediminias Petraitas, in Tableau. <i>This visualization highlighted that the dataset <a href="https://www.kaggle.com/datasets/wyattowalsh/basketball/discussion/402040">is incomplete</a> for certain years, most notably 2018, emphasizing the importance of comprehensive data coverage for robust analysis.</i> In the visualization, each solid black dot denotes a game officiated by Petraitas.
 
+<hr>
 <div class="text-center">
     <div class="col-sm mt-3 mt-md-0">
         <img src="/images/Ged.png" alt="example image" style="max-width:90%; border: 1px solid #ccc; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);" />
     </div>
 </div>
+<hr>
 
 This visualization tells a much different story. Instead of Petraitas consistently adding double digits above the Wizards' expected score, he happened to officiate games when the Wizard's had their highest scoring seasons. Indeed, this is not just a Wizards phenomenon, but a league-wide one. The Wizards average points per game (PPG) in the 2014-2015 season was 98.5, 17th in the league, and increased to 114.4 PPG in the 2019-2020 season, a very significant increase, placing 7th in the league by PPG. Over the same period, the NBA league average increased from 100.0 to 111.8, likely due to more emphasis on three pointers and increasingly faster paced games.
 
@@ -57,11 +59,13 @@ This analysis paints a much less extreme picture. Presented below are the top te
 
 In this ranking, none of the referee-team combinations exceed double digit point differences. Indeed, the margins approach approximately 5 points very rapidly. Notably, the previously analyzed Petraitis pairing ranks second. Mark Ayotte, with 49 New York Knicks games officiated within the dataset, shows an average benefit of nearly 7.5 points for that team. As with the prior analysis, the data was visualized in Tableau to assess whether the deviation appears extreme.
 
+<hr>
 <div class="text-center">
     <div class="col-sm mt-3 mt-md-0">
         <img src="/images/Ayotte.png" alt="example image" style="max-width:90%; border: 1px solid #ccc; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);" />
     </div>
 </div>
+<hr>
 
 Similarly, there seems to be no clear pattern of Mark Ayotte helping the Knicks score more points even though the data suggests it. In fact, there were a few games between 2014-2017 where NYK games officiated by Ayotte are near the bottom of their season scoring. However, the outlier games (143 points against the Hawks in 2019 and 137 points also against the Hawks in 2021) more than offset these. 
 
@@ -141,7 +145,7 @@ However, a few caveats. It's more than likely Referees A and F are Dick Bavetta 
 
 <h4 style="font-size: 24px;">Method 4: Propensity Score Matching</h4>
 
-While the analysis has employed quantitative metrics, it has yet to assess the improbability of each result. For instance, with the second metric, how unlikely is it that a given team-referee combination has a 4 point deviation from the average. 5%? 1%? 0.1%? To account for this, the fourth method uses <strong>propensity score matching</strong>. In propensity score matching, the effect of a treatment, here the presence of a specific referee, is estimated by matching one game to another similar game based on chosen metrics. The selected covariates for this matching process include the home team's win percentage at home, the away team's win percentage when away, and the time the game took place to factor in changes in rules and gameplay. For instance, the model matched these two games:
+While the analysis has employed quantitative metrics, it has yet to assess the improbability of each result. For instance, with the second metric, how unlikely is it that a given team-referee combination has a 4 point deviation from the average. 5% chance? 1%? 0.1%? To account for this, the fourth method uses <strong>propensity score matching</strong>. In propensity score matching, the effect of a treatment, here the presence of a specific referee, is estimated by matching one game to another similar game based on chosen metrics. The selected covariates for this matching process include the home team's win percentage at home, the away team's win percentage when away, and the time the game took place to factor in changes in rules and gameplay. For instance, the model matched these two games:
 
 
 | Referee Name | Game       | Home Win Pct | Away Win Pct | Date       | W/L (Home) | Propensity Score |
@@ -177,8 +181,8 @@ def find_closest_match(row):
 result_df = psm_data.apply(lambda row: pd.concat([row, find_closest_match(row)]), axis=1)
 {% endhighlight %}
 
-With every game now matched, paired t-tests will be conducted for each referee. These tests will compare the W/L distribution of the referee against all corresponding matches. If a significant difference in winning percentage is observed, it may be inferred that the referee's presence is influencing the game outcome. Upon completing the t-tests, metrics such as t-statistic (how far the statistic is from the null hypothesis), p-value (probability of observing the data if the null hypothesis is true), and Cohen's d (a measure of effect size; generally d > 0.8 is considered large) will be reported. The top 10 referees by lowest p-values are shown below:
+With every game now matched, paired t-tests were conducted for each referee. These tests compared the W/L distribution of the referee against all corresponding matches. If a significant difference in winning percentage is observed, it may be inferred that the referee's presence is influencing the game outcome. Upon completing the t-tests, metrics such as t-statistic (how far the statistic is from the null hypothesis), p-value (probability of observing the data if the null hypothesis is true), and Cohen's d (a measure of effect size; generally d > 0.8 is considered large) were calculated. The top 10 referees by lowest p-values are shown below:
 
 ![Table of p-values](https://camo.githubusercontent.com/997798ca37b9966b83a16d058c6558f9ffaa837c958fa7a17a5d18d25f7fbea3/68747470733a2f2f692e696d6775722e636f6d2f644d466b4573462e706e67)
 
-Therefore, from this matching technique, the conclusion is that there's no evidence <i>any</i> referee significantly impacts NBA games, assuming a 5% significance level. Given the NBA's emphasis on officiating, this isn't shocking. So, if you're worried about referees skewing game outcomes, relax—for now. Just remember, this is one way to look at the data, and alternative analyses could potentially tell a different story. 
+Therefore, based on this matching technique, there is no evidence <i>any</i> referee significantly impacts NBA games, assuming a 5% significance level. Given the NBA's emphasis on officiating, this isn't shocking. So, if you're worried about referees skewing game outcomes, relax -- for now. 
