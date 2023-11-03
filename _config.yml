@@ -10,7 +10,7 @@ locale                   : "en-US"
 title                    : "Blake L. Law"
 title_separator          : "-"
 name                     : &name "Blake Law"
-description              : &description "personal description"
+description              : &description "Collection of projects, what I'm working on, and more about me"
 url                      : https://www.blakelaw.dev # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "blakelaw.github.io"
@@ -266,6 +266,7 @@ plugins:
   - jekyll-feed
   - jekyll-redirect-from
   - jekyll-toc
+  - jekyll-seo-tag
 # mimic GitHub Pages with --safe
 whitelist:
   - jekyll-paginate

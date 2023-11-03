@@ -1,12 +1,14 @@
 ---
 permalink: /
-title: "Hey! My name is Blake"
-excerpt: "About me"
+title: "Hey! My name is Blake."
+description: "a collection of projects, what I'm working on, and more about me"
 author_profile: true
 redirect_from: 
   - /about/
   - /about.html
 ---
+
+{% seo %}
 
 I am an undergraduate student at Georgia Tech majoring in mathematics with a concentration in data science. I have worked as a research intern at Kennesaw State University's mathematics department and as grader of several math classes at Tech, including advanced statistics and partial differential equations. 
 
