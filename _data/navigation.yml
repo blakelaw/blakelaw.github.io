@@ -11,7 +11,8 @@ main:
   - title: "Articles"
     url: /articles/
 
-        
+  - title: "Availability"
+    url: /availability/
 #  - title: "Blog Posts"
 #    url: /year-archive/
 #
