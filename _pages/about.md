@@ -16,6 +16,7 @@ My current academic interests revolve around machine learning, natural language 
 
 Updates
 ======
+* I accepted an offer to work as a data science intern this summer at [Perpay](https://perpay.com/), a fintech firm focused on providing credit to underserved communities.
 * I am working on a [project](https://github.com/blakelaw/Cobb-Microregion) to identify cultural regions in Georgia that are smaller than a city -- which I have termed "microregions" -- through natural language processing and clustering analysis
 * I am currently grading for [MATH 4261](https://math.gatech.edu/courses/math/4261) (Mathematical Statistics I) and [MATH 4347](https://math.gatech.edu/courses/math/4347) (Partial Differential Equations I) for the Fall 2023 semester
 * Investigated the bias of NBA referees through propensity score matching and three other quantitative methods ([article](https://blakelaw.dev/portfolio/nba-referee/), [Github](https://github.com/blakelaw/Referee-Analysis)) 
