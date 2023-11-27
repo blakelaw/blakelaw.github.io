@@ -1,0 +1,25 @@
+---
+layout: default
+---
+<!-- page.html -->
+<div class="custom-post-margin">
+
+    <header class="post-header">
+        <h1 class="post-title">{{ page.title }}</h1>
+        <p class="post-description">{{ page.description }}</p>
+    </header>
+
+    <div class="post-meta">
+        {% if page.byline %}
+            <span class="byline">By {{ page.byline }}</span> &bull;
+        {% endif %}
+        {% if page.custom_date %}
+            <span class="time">{{ page.custom_date }}</span>
+        {% endif %}
+    </div>
+   <hr>
+    <article>
+        {{ content }}
+    </article>
+
+</div>
