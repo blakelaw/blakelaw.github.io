@@ -27,7 +27,7 @@ Experience
   * Discovered roundabouts had the shortest wait time by 14 seconds through ANOVA and post-hoc tests
 
 * **Teaching Assistant**, Georgia Tech Department of Mathematics (May 2023 − Present)
-  * Graded over 500 assignments and exams in three advanced statistics and one partial differential equations class
+  * Provided feedback for exams and assignments in three advanced statistics and one partial differential class
  
 Projects
 ======
