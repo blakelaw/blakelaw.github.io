@@ -7,41 +7,92 @@ author_profile: false
 collection: portfolio
 ---
 <style>
-.full-screen-width {
-  position: relative;
-  left: -375px; /* This might need adjustment based on your page layout */
-  max-width: 102vw;
-  width: 102vw;
-  padding: 20px;
-  display: block;
-  margin: auto;
-  margin-top: -68px; /* Adjust this value as needed to push the image to the top */
-  margin-bottom: 0; /* Remove bottom margin */
-  padding-bottom: 0; /* Remove bottom padding */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap');
+
+/* Ensure the body has no margin, which could prevent the image from touching the left side */
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
-.custom-hr {
-  border: none;
-  border-top: 1px solid lightgrey;
-  margin-top: 1px; /* Adjust this value as needed */
-  width: 100vw; /* Set the width to be 100% of the viewport width */
-  position: relative; /* Set position relative to enable left offset */
-  left: calc(-50vw + 50%); /* Center the line */
-  right: 0;
-  margin-left: 0; /* Reset any default margin */
-  margin-right: 0; /* Reset any default margin */
+.full-screen-background {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw; /* Full viewport width */
+  height: 70vh; /* Adjusted height */
+  background-image: url('/images/title.png'); /* Update with the correct path */
+  background-size: cover;
+  background-position: center center;
+  position: absolute; /* or 'fixed' if you want it to stay in place on scroll */
+    left: 0; /* Align to the very left of the viewport */
+    top: 11vh; /* Align to the very top of the viewport */
+    right: 0; /* Ensure it stretches to the very right of the viewport */
+    margin: 0; /* Override any inherited margins */
 }
+
+.overlay-text {
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 10px;
+  padding: 1em; /* Adjusted padding */
+  box-sizing: border-box;
+  color: white;
+  width: 80%;
+  max-width: 600px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Adjust the margins between lines as needed */
+.overlay-text h1 {
+  font-size: 3em;
+  font-weight: 700;
+  margin: 0 0 0.1em 0; /* Increased space after the title */
+}
+
+.overlay-text h2 {
+  font-size: 1.5em;
+  font-weight: 400;
+  margin: 0 0 0.5em 0; /* Increased space after the subtitle */
+}
+
+.overlay-text h3 {
+  font-size: 1em;
+  font-weight: 700;
+  margin: 0 0 0.25em 0; /* Smaller space after the byline */
+}
+
+.overlay-text p {
+  font-size: 0.75em;
+  font-weight: 300;
+  margin: 0; /* No additional space after the date */
+}
+
+/* Additional CSS */
 </style>
 
-<img src="/images/Title.png" class="full-screen-width" />
-<hr class="custom-hr">
+<div class="full-screen-background">
+  <div class="overlay-text">
+    <h1>Decoding the Decisions</h1>
+    <h2>Are NBA referees secretly biased?</h2>
+    <h3>By: Blake Law</h3>
+    <p>September 1, 2023</p>
+  </div>
+</div>
+
+<!-- Rest of the content -->
 
 
 
 
-*Find the source code for the article [here](https://github.com/blakelaw/Referee-Analysis).* 
+<div style="margin-top: 29em;">
 
-
+<i>Find the source code for this project <a href="https://github.com/blakelaw/Referee-Analysis">here</a></i><br><br>
 
 Across every sport, fans will boo referees when a call doesn't go their way. They emphatically explain how they're being paid off and rigging it in real time. Basketball is no exception. And indeed, there may have been 
 <a href="https://www.npr.org/2008/06/12/91415111/ex-referee-says-2002-nba-playoff-was-rigged">cases</a> of referees interfering and throwing a game, but how large of an effect are they really having on a daily basis?
@@ -53,7 +104,7 @@ To answer this, I pored through a <a href="https://www.kaggle.com/datasets/wyatt
 
 The most basic way of seeing how much a particular referee impacts a team is by calculating the average score of the team over the dataset (in this particular case, starting in the 1996 NBA season -- referee data isn't included before then), and then comparing that the to average score of the team when a particular referee officiates the game. This is easy to do in Python by connecting to the SQL database with the sqlite3 library then creating a dataframe in pandas.
 
-After conducting exploratory analysis on the dataframe, a new table was generated showing the specific referee and NBA team combinations along with the differential compared to how that team normally performs. To ensure the analysis includes only referees who have officiated a substantial number of games for a given team, a threshold of a minimum of 30 games officiated per team was set. Presented below are the top ten referee-team pairings ranked by the absolute value of the difference in average scores.
+After conducting exploratory analysis on the dataframe, a new table was generated showing the specific referee and NBA team combinations along with the differential compared to how that team normally performs. To ensure the analysis includes only referees who have officiated a substantial number of games for a given team, a threshold of a minimum of 30 games officiated per team was set. Presented below are the top ten referee-team pairings ranked by the absolute value of the difference in average scores.<br><br>
 
 <iframe title="Largest Referee-Team Discrepancies in Total Scoring" aria-label="Table" id="datawrapper-chart-zlDrb" src="https://datawrapper.dwcdn.net/zlDrb/7/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="542" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r=0;r<e.length;r++)if(e[r].contentWindow===a.source){var i=a.data["datawrapper-height"][t]+"px";e[r].style.height=i}}}))}();
 </script>
@@ -88,7 +139,7 @@ Rather than calculating the average over the full dataset, an "Elo" rating syste
 
 In the previous example with Petraitas, instead of the Wizard's 146-149 loss on 1/31/21 counting as a 47 point deviation, it is roughly 31 points. 
 
-This analysis paints a much less extreme picture. Presented below are the top ten referee-team pairings using this revised metric:
+This analysis paints a much less extreme picture. Presented below are the top ten referee-team pairings using this revised metric:<br><br>
 
 <iframe title="Largest Referee-Elo Discrepancies" aria-label="Table" id="datawrapper-chart-TPG4L" src="https://datawrapper.dwcdn.net/TPG4L/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="509" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r=0;r<e.length;r++)if(e[r].contentWindow===a.source){var i=a.data["datawrapper-height"][t]+"px";e[r].style.height=i}}}))}();
 </script>
@@ -146,7 +197,7 @@ scores <- pca_result$x
 data_with_scores <- cbind(data_for_pca, scores)
 {% endhighlight %}
 
-Two parameters for prcomp, `scale. = TRUE` and `center = TRUE`, indicate that standardization is performed internally, making prior normalization optional. However, standardizing the original dataframe provides flexibility for potential use in other contexts where automatic standardization is not available. To interpret the principal components, attention is first given to the relative weights or loadings assigned to each variable by running `print(pca_result$rotation)`.
+Two parameters for prcomp, <code>scale. = TRUE</code> and <code>center = TRUE</code>, indicate that standardization is performed internally, making prior normalization optional. However, standardizing the original dataframe provides flexibility for potential use in other contexts where automatic standardization is not available. To interpret the principal components, attention is first given to the relative weights or loadings assigned to each variable by running <code>print(pca_result$rotation)</code>.
 
 {% include my_table2.html %}
 
@@ -160,7 +211,7 @@ In the first component, many of the loadings were in the 0.25-0.30 range (in abs
 
 In the second component, which is mathematically uncorrelated with the first, the weights are completely different. Assists go from having a weight of -0.309 to -0.001. In this second component, defensive measures take importance. Now, steals and blocks have the highest magnitude weights: -0.550 and -0.619, respectively. Free throws made (0.259) is  also relatively high. The offensive stats such as pts and fgm now score relatively low, under 0.1.
 
-The first component can be conceptualized as capturing offensive variance, while the second focuses primarily on defensive aspects. Referees affecting offensive statistics will deviate from a PC1 value of zero, and those impacting defensive statistics will show variation along PC2. To visualize these relationships, the weights are projected onto the calculated statistics for each referee, allowing examination of individual performance in the context of the number of games officiated, as well as precise PC1 and PC2 values.
+The first component can be conceptualized as capturing offensive variance, while the second focuses primarily on defensive aspects. Referees affecting offensive statistics will deviate from a PC1 value of zero, and those impacting defensive statistics will show variation along PC2. To visualize these relationships, the weights are projected onto the calculated statistics for each referee, allowing examination of individual performance in the context of the number of games officiated, as well as precise PC1 and PC2 values.<br><br>
 
 <iframe title="NBA Referees by Principal Components" aria-label="Scatter Plot" id="datawrapper-chart-suU3Z" src="https://datawrapper.dwcdn.net/suU3Z/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="400" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r=0;r<e.length;r++)if(e[r].contentWindow===a.source){var i=a.data["datawrapper-height"][t]+"px";e[r].style.height=i}}}))}();
 </script>
@@ -181,13 +232,42 @@ However, a few caveats. It's more than likely Referees A and F are Dick Bavetta 
 
 <h4 style="font-size: 24px;">Method 4: Propensity Score Matching</h4>
 
-While the analysis has employed quantitative metrics, it has yet to assess the improbability of each result. For instance, with the second metric, how unlikely is it that a given team-referee combination has a 4 point deviation from the average. 5% chance? 1%? 0.1%? To account for this, the fourth method uses <strong>propensity score matching</strong>. In propensity score matching, the effect of a treatment, here the presence of a specific referee, is estimated by matching one game to another similar game based on chosen metrics. The selected covariates for this matching process include the home team's win percentage at home, the away team's win percentage when away, and the time the game took place to factor in changes in rules and gameplay. For instance, the model matched these two games:
+While the analysis has employed quantitative metrics, it has yet to assess the improbability of each result. For instance, with the second metric, how unlikely is it that a given team-referee combination has a 4 point deviation from the average. 5% chance? 1%? 0.1%? To account for this, the fourth method uses <strong>propensity score matching</strong>. In propensity score matching, the effect of a treatment, here the presence of a specific referee, is estimated by matching one game to another similar game based on chosen metrics. The selected covariates for this matching process include the home team's win percentage at home, the away team's win percentage when away, and the time the game took place to factor in changes in rules and gameplay. For instance, the model matched these two games:<br>
 
 
-| Referee Name | Game       | Home Win Pct | Away Win Pct | Date       | W/L (Home) | Propensity Score |
-|--------------|------------|--------------|--------------|------------|------------|------------------|
-| Tim Donaghy  | DET vs GSW | 74.5%        | 22.9%        | 2004-01-03 | W          | 0.849            |
-| Jane Smith   | DAL vs LAC | 80.5%        | 20.0%        | 2009-01-06 | W          | 0.849            |
+<table>
+  <thead>
+    <tr>
+      <th>Referee Name</th>
+      <th>Game</th>
+      <th>Home Win Pct</th>
+      <th>Away Win Pct</th>
+      <th>Date</th>
+      <th>W/L (Home)</th>
+      <th>Propensity Score</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Tim Donaghy</td>
+      <td>DET vs GSW</td>
+      <td>74.5%</td>
+      <td>22.9%</td>
+      <td>2004-01-03</td>
+      <td>W</td>
+      <td>0.849</td>
+    </tr>
+    <tr>
+      <td>Jane Smith</td>
+      <td>DAL vs LAC</td>
+      <td>80.5%</td>
+      <td>20.0%</td>
+      <td>2009-01-06</td>
+      <td>W</td>
+      <td>0.849</td>
+    </tr>
+  </tbody>
+</table>
 
 
 The propensity score is based on a <strong>logistic regression</strong> model. To achieve this, a 'W' for the home team is converted to a 1, and an 'L' to a 0. A model is then created using the previously mentioned independent variables:
@@ -219,6 +299,13 @@ result_df = psm_data.apply(lambda row: pd.concat([row, find_closest_match(row)])
 
 With every game now matched, paired t-tests were conducted for each referee. These tests compared the W/L distribution of the referee against all corresponding matches. If a significant difference in winning percentage is observed, it may be inferred that the referee's presence is influencing the game outcome. Upon completing the t-tests, metrics such as t-statistic (how far the statistic is from the null hypothesis), p-value (probability of observing the data if the null hypothesis is true), and Cohen's d (a measure of effect size; generally d > 0.8 is considered large) were calculated. The top 10 referees by lowest p-values are shown below:
 
-![Table of p-values](https://camo.githubusercontent.com/997798ca37b9966b83a16d058c6558f9ffaa837c958fa7a17a5d18d25f7fbea3/68747470733a2f2f692e696d6775722e636f6d2f644d466b4573462e706e67)
+<hr>
+<div class="text-center">
+    <div class="col-sm mt-3 mt-md-0">
+        <img src="https://camo.githubusercontent.com/997798ca37b9966b83a16d058c6558f9ffaa837c958fa7a17a5d18d25f7fbea3/68747470733a2f2f692e696d6775722e636f6d2f644d466b4573462e706e67" alt="example image" style="max-width:90%; border: 1px solid #ccc; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);" />
+    </div>
+</div>
+<hr>
 
 Therefore, based on this matching technique, there is no evidence <i>any</i> referee significantly impacts NBA games, assuming a 5% significance level. Given the NBA's emphasis on officiating, this isn't shocking. So, if you're worried about referees skewing game outcomes, relax -- for now. 
+</div>
