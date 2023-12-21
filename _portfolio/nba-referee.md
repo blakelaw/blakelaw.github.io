@@ -10,12 +10,12 @@ collection: portfolio
 .full-screen-width {
   position: relative;
   left: -375px; /* This might need adjustment based on your page layout */
-  max-width: 100vw;
-  width: 100vw;
+  max-width: 102vw;
+  width: 102vw;
   padding: 20px;
   display: block;
   margin: auto;
-  margin-top: -50px; /* Adjust this value as needed to push the image to the top */
+  margin-top: -68px; /* Adjust this value as needed to push the image to the top */
   margin-bottom: 0; /* Remove bottom margin */
   padding-bottom: 0; /* Remove bottom padding */
 }
