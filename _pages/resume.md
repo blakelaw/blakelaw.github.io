@@ -11,6 +11,6 @@ redirect_from:
 
 <hr class="light-grey-line">
 
-<embed src="https://blakelaw.dev/files/BlakeLawResume.pdf" type="application/pdf" width="600px" height="500px" />
+<embed src="https://blakelaw.dev/files/BlakeLawResume.pdf" type="application/pdf" width="480px" height="400px" />
 
 
