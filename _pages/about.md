@@ -10,9 +10,11 @@ redirect_from:
 
 {% seo %}
 
-I am an undergraduate student at Georgia Tech majoring in mathematics with a concentration in data science. I have worked as a research intern at Kennesaw State University's mathematics department and as grader of several math classes at Tech, including advanced statistics and partial differential equations. This summer I will be a data science intern at Perpay, a financial firm focused on providing credit to underserved communities.
+I am currently an undergraduate at Georgia Tech, majoring in mathematics with a concentration in data science. 
 
-My current academic interests revolve around machine learning, natural language processing, data engineering, and data visualization. Outside of my academic interests, I like playing the piano, hiking, tennis, and geoguessr. If you have any exciting opportunities or questions, don't hesitate to email me at blakelaw at gatech dot edu.
+I have worked as a research intern at Kennesaw State University’s mathematics department and this summer I will be a data science intern at Perpay, a financial firm focused on providing credit to underserved communities. 
+
+My current academic interests revolve around markets, machine learning, and public policy. Outside of school, I enjoy playing the piano, hiking, tennis, and geoguessr. If you have any exciting opportunities or questions, don't hesitate to email me at `blakelaw@gatech.edu`.
 
 Updates
 ======
