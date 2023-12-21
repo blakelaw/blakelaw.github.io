@@ -11,9 +11,6 @@ main:
   - title: "Articles"
     url: /articles/
 
-  - title: "Availability"
-    url: /availability/
-
   - title: "Gallery"
     url: /gallery/
 #  - title: "Blog Posts"

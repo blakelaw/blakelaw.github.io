@@ -1,11 +1,47 @@
 ---
-title: "Decoding the Decisions"
+title: ""
+seo_title: "Decoding the Decisions"
 excerpt: "a deep dive into NBA referee impact on gameplay"
 image: "/images/12.jpg"
+author_profile: false
 collection: portfolio
 ---
+<style>
+.full-screen-width {
+  position: relative;
+  left: -375px; /* This might need adjustment based on your page layout */
+  max-width: 100vw;
+  width: 100vw;
+  padding: 20px;
+  display: block;
+  margin: auto;
+  margin-top: -50px; /* Adjust this value as needed to push the image to the top */
+  margin-bottom: 0; /* Remove bottom margin */
+  padding-bottom: 0; /* Remove bottom padding */
+}
+
+.custom-hr {
+  border: none;
+  border-top: 1px solid lightgrey;
+  margin-top: 1px; /* Adjust this value as needed */
+  width: 100vw; /* Set the width to be 100% of the viewport width */
+  position: relative; /* Set position relative to enable left offset */
+  left: calc(-50vw + 50%); /* Center the line */
+  right: 0;
+  margin-left: 0; /* Reset any default margin */
+  margin-right: 0; /* Reset any default margin */
+}
+</style>
+
+<img src="/images/Title.png" class="full-screen-width" />
+<hr class="custom-hr">
+
+
+
 
 *Find the source code for the article [here](https://github.com/blakelaw/Referee-Analysis).* 
+
+
 
 Across every sport, fans will boo referees when a call doesn't go their way. They emphatically explain how they're being paid off and rigging it in real time. Basketball is no exception. And indeed, there may have been 
 <a href="https://www.npr.org/2008/06/12/91415111/ex-referee-says-2002-nba-playoff-was-rigged">cases</a> of referees interfering and throwing a game, but how large of an effect are they really having on a daily basis?

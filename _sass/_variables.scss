@@ -5,6 +5,8 @@
 /*
    Typography
    ========================================================================== */
+   
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;700&display=swap');
 
 $doc-font-size              : 16;
 
@@ -27,10 +29,11 @@ $times                      : Times, serif;
 $bodoni                     : "Bodoni MT", serif;
 $calisto                    : "Calisto MT", serif;
 $garamond                   : Garamond, serif;
+$eb-garamond                : 'EB Garamond', serif;
 
-$global-font-family         : $sans-serif;
-$header-font-family         : $sans-serif;
-$caption-font-family        : $serif;
+$global-font-family         : $garamond;
+$header-font-family         : $garamond;
+$caption-font-family        : $garamond;
 
 /* type scale */
 $type-size-1                : 2.441em;  // ~39.056px
@@ -168,6 +171,7 @@ $times                      : Times, serif;
 $bodoni                     : "Bodoni MT", serif;
 $calisto                    : "Calisto MT", serif;
 $garamond                   : Garamond, serif;
+$eb-garamond                : 'EB Garamond', serif;
 
 $global-font-family         : $sans-serif;
 $header-font-family         : $sans-serif;
