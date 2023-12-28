@@ -1,18 +1,13 @@
 # main links links
 main:
-  - title: "Résumé"
-    url: /resume/
-
-#  - title: "Talks"
-#    url: /talks/
-  - title: "Portfolio"
-    url: /portfolio/
-
   - title: "Articles"
     url: /articles/
-
+  - title: "Portfolio"
+    url: /portfolio/
   - title: "Gallery"
     url: /gallery/
+  - title: "Résumé"
+    url: /resume/
 #  - title: "Blog Posts"
 #    url: /year-archive/
 #
