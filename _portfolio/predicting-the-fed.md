@@ -167,7 +167,7 @@ The CME FedWatch provides CSV downloads for their historical data. Unfortunately
 
 ## Analysis
 
-To directly compare Kalshi and FedWatch, I found the *implied interest rate* by weighting each target range with the probability provided at a given time. For instance, in the FedWatch example earlier, the implied rate (which we will denote IR) for January 2024 based on today’s expectations is calculated as
+To directly compare Kalshi and FedWatch, I found the *implied interest rate* by weighting each target range with the probability provided at a given time. For instance, in the FedWatch example earlier, the **implied rate** (which we will denote IR) for January 2024 based on today’s expectations is calculated as
 
 $$IR = 512.5 \cdot 0.186 + 537.5 \cdot 0.814 = 532.85 \text{ bps } (5.33\%)$$
 
@@ -294,7 +294,7 @@ How can we quantitatively measure which one is more accurate? Rather than use me
 Mathematically, this can be written as
 
 $$
-\text{Error}(x) = 
+\text{E}(x) = 
 \begin{cases} 
 0 & \text{if } A \leq x \leq B \\
 |x - A| & \text{if } x < A \\
@@ -313,7 +313,25 @@ With theoretical federal funds target rate being from $A$ to $B$.
 
 
 
-With that in mind, let's run this through each of our data sets and find the average error:
+With that in mind, let's calculate the average error for each meeting and market. Since prices may add up to over 100 on markets, we will divide by the sum of market prices, which themselves are derived by taking the midpoint of the 'yes bid' and 'yes ask' from the order book:
+
+$$\begin{equation}E_{avg} = \frac{1}{N} E\left(\sum_{i=1}^{N} \frac{\sum_{j=1}^{K} M_{j} \cdot P_{i,j}}{\sum_{j=1}^{K} P_{i,j}}\right)\end{equation}$$
+
+where
+
+- $$E(x)$$ is the error function
+- $$M_{j}$$ is the midpoint of a given federal funds range $j$ 
+- $$P_{i,j}$$ is the market price, equal to $$\frac{a_{i,j}+b_{i,j}}{2}$$
+- $$a_{i,j}$$ is the yes ask price at time $i$ in range $j$
+- $$b_{i,j}$$ is the yes bid price at time $i$ in range $j$
+- $$N$$ is the total number of discrete times
+- $$K$$ is the total number of target ranges (for instance, in Dec. 2023 $$K = 15$$)
+
+Running this through each of the dataframes yields the following results:
+
+
+
+
 
 <iframe title="Comparison of Kalshi and CME" aria-label="Table" id="datawrapper-chart-1ryej" src="https://datawrapper.dwcdn.net/1ryej/2/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="255" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r=0;r<e.length;r++)if(e[r].contentWindow===a.source){var i=a.data["datawrapper-height"][t]+"px";e[r].style.height=i}}}))}();
 </script>
