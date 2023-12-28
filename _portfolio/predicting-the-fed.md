@@ -315,7 +315,7 @@ With theoretical federal funds target rate being from $A$ to $B$.
 
 With that in mind, let's calculate the average error for each meeting and market. Since prices may add up to over $1.00 on markets, we will divide by the sum of market prices, which themselves are derived by taking the midpoint of the 'yes bid' and 'yes ask' from the order book:
 
-$$\begin{equation}E_{avg} = \frac{1}{N} \cdot  E\left(\sum_{i=1}^{N} \frac{\sum_{j=1}^{K} M_{j} \cdot P_{i,j}}{\sum_{j=1}^{K} P_{i,j}}\right)\end{equation}$$
+$$\begin{equation}E_{avg} = \frac{1}{N} \cdot \sum_{i=1}^{N}  E\left(\frac{\sum_{j=1}^{K} M_{j} \cdot P_{i,j}}{\sum_{j=1}^{K} P_{i,j}}\right)\end{equation}$$
 
 where
 
