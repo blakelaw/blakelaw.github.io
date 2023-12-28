@@ -289,7 +289,7 @@ Finally, we see slightly more noise in Kalshi’s data, due to lower trading vol
 How can we quantitatively measure which one is more accurate? Rather than use mean-squared error or some standard metric, I decided that the circumstances warrant a special metric, as the target is a range, not a point. So, for a given data point, the error will be scored as follows:
 
 - If the point is within the final range, there is no error.
-- If the point is outside the range, take the minimum distance to the boundary closest to it. For instance, $$5.75$$ would correspond to an error of $$0.25$$, while $$5.4$$ would correspond to an error of $$0.1$$.
+- If the point is outside the range, take the minimum distance to the boundary closest to it. For instance, $$5.75$$ would correspond to an error of $$0.25$$, while $$5.15$$ would correspond to an error of $$0.10$$.
 
 Mathematically, this can be written as
 
@@ -308,14 +308,14 @@ With theoretical federal funds target rate being from $A$ to $B$.
 <p align="center" style="padding-top: 10px;">
     <img src="/images/metric.png" alt="example image" width="200" style="margin-bottom: 5px;">
     <br>
-    <em>Sample metric calculations</em>
+    <em>Sample error calculations</em>
 </p>
 
 
 
 With that in mind, let's calculate the average error for each meeting and market. Since prices may add up to over $1.00 on markets, we will divide by the sum of market prices, which themselves are derived by taking the midpoint of the 'yes bid' and 'yes ask' from the order book:
 
-$$\begin{equation}E_{avg} = \frac{1}{N} E\left(\sum_{i=1}^{N} \frac{\sum_{j=1}^{K} M_{j} \cdot P_{i,j}}{\sum_{j=1}^{K} P_{i,j}}\right)\end{equation}$$
+$$\begin{equation}E_{avg} = \frac{1}{N} \cdot  E\left(\sum_{i=1}^{N} \frac{\sum_{j=1}^{K} M_{j} \cdot P_{i,j}}{\sum_{j=1}^{K} P_{i,j}}\right)\end{equation}$$
 
 where
 
