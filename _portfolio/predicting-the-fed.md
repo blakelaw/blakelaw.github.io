@@ -289,7 +289,7 @@ Finally, we see slightly more noise in Kalshi’s data, due to lower trading vol
 How can we quantitatively measure which one is more accurate? Rather than use mean-squared error or some standard metric, I decided that the circumstances warrant a special metric, as the target is a range, not a point. So, for a given data point, the error will be scored as follows:
 
 - If the point is within the final range, there is no error.
-- If the point is outside the range, take the minimum distance to the boundary closest to it. For instance, in this case, $$5.75$$ would correspond to an error of $$0.25$$, while $$5.4$$ would correspond to an error of $$0.1$$.
+- If the point is outside the range, take the minimum distance to the boundary closest to it. For instance, $$5.75$$ would correspond to an error of $$0.25$$, while $$5.4$$ would correspond to an error of $$0.1$$.
 
 Mathematically, this can be written as
 
