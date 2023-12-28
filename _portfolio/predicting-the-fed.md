@@ -6,7 +6,7 @@ image: "/images/12.jpg"
 author_profile: false
 collection: portfolio
 ---
-
+{% include base_path %}
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap');
 
