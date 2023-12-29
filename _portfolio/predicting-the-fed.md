@@ -239,8 +239,7 @@ img {
   border-radius: 8px;
 }
 
-/* Arrows style */
-.prev, .next {
+.slideshow-container a.prev, .slideshow-container a.next {
   cursor: pointer;
   position: absolute;
   top: 50%;
@@ -252,15 +251,16 @@ img {
   z-index: 100;
   background: transparent;
   border: none;
+  text-decoration: none; /* Remove underline */
 }
 
 /* Positioning the arrows completely outside of the image */
-.prev {
-  left: calc(0% - 40px); /* Adjust left position here */
+.slideshow-container a.prev {
+  left: calc(0% - 40px);
 }
 
-.next {
-  right: calc(0% - 40px); /* Adjust right position here */
+.slideshow-container a.next {
+  right: calc(0% - 40px);
 }
 </style>
 
