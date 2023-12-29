@@ -317,7 +317,7 @@ With theoretical federal funds target rate being from $A$ to $B$.
 
 
 <p align="center" style="padding-top: 10px;">
-    <img src="/images/metric.png" alt="example image" width="200" style="margin-bottom: 5px;">
+    <img src="/images/Fig37.png" alt="example image" width="200" style="margin-bottom: 5px;">
     <br>
     <em>Sample error calculations</em>
 </p>
