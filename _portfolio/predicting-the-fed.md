@@ -1,5 +1,5 @@
 ---
-title: "I"
+title: "Interest Rate Analysis"
 seo_title: "Interest Rate Analysis"
 excerpt: "a deep dive into NBA referee impact on gameplay"
 image: "/images/12.jpg"
