@@ -106,7 +106,7 @@ body, html {
 
 Interest rates impact the entire economy. A high mortgage rate might discourage potential homebuyers. A low interest rate on loans improves access to credit for startups looking to scale. More broadly, the interest rate has profound impacts on two fundamental indicators: the unemployment rate and inflation.
 
-The *Federal Open Market Committee (FOMC)*, a branch of the Federal Reserve, meets eight times a year to set a target range for the federal funds rate, the interest rate banks charge each other for reserve balances that aren’t backed by collateral. While this sounds like an esoteric situation to target, it has ripple effects on every other interest rate, although at varying levels. Most directly, it affects short-term interest rates, such as Treasury bills or the prime rate, the interest banks charge on customers with good credit. However, it can also affect longer term interest rates such as 30 year bonds and mortgages.
+The *Federal Open Market Committee (FOMC)*, a branch of the Federal Reserve, meets eight times a year to set a target range for the federal funds rate, the interest rate banks charge each other for reserve balances that aren’t backed by collateral. While this sounds like an odd situation to target, it has ripple effects on every other interest rate, although at varying levels. Most directly, it affects short-term interest rates, such as Treasury bills or the prime rate, the interest banks charge on customers with good credit. However, it can also affect longer term interest rates such as 30 year bonds and mortgages.
 
 
 <p align="center" style="padding-top: 10px;">
