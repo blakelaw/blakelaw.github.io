@@ -1,5 +1,5 @@
 ---
-title: ""
+title: "Interest Rate Analysis"
 seo_title: "Interest Rate Analysis"
 excerpt: "a deep dive into NBA referee impact on gameplay"
 image: "/images/12.jpg"
@@ -75,7 +75,23 @@ body, html {
   margin: 0; /* No additional space after the date */
 }
 
-/* Additional CSS */
+.content {
+  padding-top: 150vh; /* Increase this value to push content down further */
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .spacer {
+    height: 70vh; /* Adjust for smaller screens */
+  }
+}
+
+.spacer {
+  height: 60vh; /* Adjust this value as needed */
+}
+
 </style>
 
 <div class="full-screen-background">
@@ -87,14 +103,8 @@ body, html {
   </div>
 </div>
 
-<style>
-    #markdown-intro {
-        padding-top: 15000px; /* Adjust the value as needed */
-    }
-</style>
 
-
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<div class="spacer"></div>
 
 ## Introduction
 

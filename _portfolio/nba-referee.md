@@ -1,5 +1,5 @@
 ---
-title: ""
+title: "Decoding the Decisions"
 seo_title: "Decoding the Decisions"
 excerpt: "a deep dive into NBA referee impact on gameplay"
 image: "/images/12.jpg"
@@ -75,7 +75,22 @@ body, html {
   margin: 0; /* No additional space after the date */
 }
 
-/* Additional CSS */
+.content {
+  padding-top: 150vh; /* Increase this value to push content down further */
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .spacer {
+    height: 70vh; /* Adjust for smaller screens */
+  }
+}
+
+.spacer {
+  height: 60vh; /* Adjust this value as needed */
+}
 </style>
 
 <div class="full-screen-background">
@@ -92,9 +107,10 @@ body, html {
 
 
 
-<div style="margin-top: 29em;">
+<div class="spacer"></div>
 
-<i>Find the source code for this project <a href="https://github.com/blakelaw/Referee-Analysis">here</a></i><br><br>
+
+<h4 style="font-size: 20px;">Introduction</h4>
 
 Across every sport, fans will boo referees when a call doesn't go their way. They emphatically explain how they're being paid off and rigging it in real time. Basketball is no exception. And indeed, there may have been 
 <a href="https://www.npr.org/2008/06/12/91415111/ex-referee-says-2002-nba-playoff-was-rigged">cases</a> of referees interfering and throwing a game, but how large of an effect are they really having on a daily basis?
@@ -309,5 +325,7 @@ With every game now matched, paired t-tests were conducted for each referee. The
 </div>
 <hr>
 
-Therefore, based on this matching technique, there is no evidence <i>any</i> referee significantly impacts NBA games, assuming a 5% significance level. Given the NBA's emphasis on officiating, this isn't shocking. So, if you're worried about referees skewing game outcomes, relax -- for now. 
+Therefore, based on this matching technique, there is no evidence <i>any</i> referee significantly impacts NBA games, assuming a 5% significance level. Given the NBA's emphasis on officiating, this isn't shocking. So, if you're worried about referees skewing game outcomes, relax -- for now. <br><br>
+
+<i>Find the source code for this project <a href="https://github.com/blakelaw/Referee-Analysis">here</a></i>.
 </div>
