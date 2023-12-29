@@ -326,4 +326,3 @@ With every game now matched, paired t-tests were conducted for each referee. The
 Therefore, based on this matching technique, there is no evidence <i>any</i> referee significantly impacts NBA games, assuming a 5% significance level. Given the NBA's emphasis on officiating, this isn't shocking. So, if you're worried about referees skewing game outcomes, relax -- for now. <br><br>
 
 <i>Find the source code for this project <a href="https://github.com/blakelaw/Referee-Analysis">here</a></i>.
-</div>
