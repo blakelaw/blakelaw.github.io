@@ -24,7 +24,7 @@ body, html {
   align-items: center;
   width: 100vw; /* Full viewport width */
   height: 70vh; /* Adjusted height */
-  background-image: url('/images/FedReserve.jpg'); 
+  background-image: url('/images/FedReserve.webp'); 
   background-size: cover;
   background-position: center center;
   position: absolute; /* or 'fixed' if you want it to stay in place on scroll */

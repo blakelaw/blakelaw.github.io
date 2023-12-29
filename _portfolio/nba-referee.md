@@ -24,7 +24,7 @@ body, html {
   align-items: center;
   width: 100vw; /* Full viewport width */
   height: 70vh; /* Adjusted height */
-  background-image: url('https://i.imgur.com/yWj9NOX.png'); 
+  background-image: url('/images/basketball.webp'); 
   background-size: cover;
   background-position: center center;
   position: absolute; /* or 'fixed' if you want it to stay in place on scroll */
