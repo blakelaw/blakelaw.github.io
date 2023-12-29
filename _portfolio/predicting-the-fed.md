@@ -1,5 +1,5 @@
 ---
-title: "Interest Rate Analysis"
+title: "I"
 seo_title: "Interest Rate Analysis"
 excerpt: "a deep dive into NBA referee impact on gameplay"
 image: "/images/12.jpg"
@@ -10,8 +10,6 @@ collection: portfolio
 {% seo %}
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap');
-
-/* Ensure the body has no margin, which could prevent the image from touching the left side */
 body, html {
   margin: 0;
   padding: 0;
@@ -22,16 +20,17 @@ body, html {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100vw; /* Full viewport width */
+  width: 100vw; /* Ensure it's the full width of the viewport */
   height: 70vh; /* Adjusted height */
-  background-image: url('/images/FedReserve.webp'); 
+  background-image: url('/images/FedReserve.webp'); /* Make sure the path is correct */
   background-size: cover;
   background-position: center center;
-  position: absolute; /* or 'fixed' if you want it to stay in place on scroll */
-    left: 0; /* Align to the very left of the viewport */
-    top: 11vh; /* Align to the very top of the viewport */
-    right: 0; /* Ensure it stretches to the very right of the viewport */
-    margin: 0; /* Override any inherited margins */
+  position: relative;
+  left: 48%;
+  right: 60%;
+  top: -70px;
+  margin-left: -50.75vw;
+  margin-right: -50vw;
 }
 
 .overlay-text {
@@ -39,34 +38,37 @@ body, html {
   font-family: 'Inter', sans-serif;
   background-color: rgba(0, 0, 0, 0.8);
   border-radius: 10px;
-  padding: 1em; /* Adjusted padding */
+  padding: 1em;
   box-sizing: border-box;
   color: white;
   width: 80%;
   max-width: 750px;
   position: absolute;
-  top: 50%;
+  top: calc(50%); /* Move it slightly up by reducing 20px */
   left: 50%;
   transform: translate(-50%, -50%);
 }
 
-/* Adjust the margins between lines as needed */
+/* Keep the rest of the original styles for h1, h2, h3, p as is */
+
+
+/* Maintain the original styles for h1, h2, h3, and p */
 .overlay-text h1 {
   font-size: 3em;
   font-weight: 700;
-  margin: 0 0 0.1em 0; /* Increased space after the title */
+  margin: 0 0 0.1em 0; /* Space after the title */
 }
 
 .overlay-text h2 {
   font-size: 1.15em;
   font-weight: 400;
-  margin: 0 0 0.5em 0; /* Increased space after the subtitle */
+  margin: 0 0 0.5em 0; /* Space after the subtitle */
 }
 
 .overlay-text h3 {
   font-size: 0.90em;
   font-weight: 700;
-  margin: 0 0 0.25em 0; /* Smaller space after the byline */
+  margin: 0 0 0.25em 0; /* Space after the byline */
 }
 
 .overlay-text p {
@@ -76,20 +78,15 @@ body, html {
 }
 
 .content {
-  padding-top: 150vh; /* Increase this value to push content down further */
+  padding-top: 0vh; /* Space to push content down */
   padding-left: 20px;
   padding-right: 20px;
-  padding-bottom: 20px;
+  padding-bottom: 100;
 }
 
-@media screen and (max-width: 768px) {
-  .spacer {
-    height: 70vh; /* Adjust for smaller screens */
-  }
-}
 
-.spacer {
-  height: 60vh; /* Adjust this value as needed */
+.pull-up {
+  margin-top: -15px; /* Adjust the value as needed */
 }
 
 </style>
@@ -104,9 +101,7 @@ body, html {
 </div>
 
 
-<div class="spacer"></div>
-
-## Introduction
+<h3 class="pull-up">Introduction</h3>
 
 
 Interest rates impact the entire economy. A high mortgage rate might discourage potential homebuyers. A low interest rate on loans improves access to credit for startups looking to scale. More broadly, the interest rate has profound impacts on two fundamental indicators: the unemployment rate and inflation.
