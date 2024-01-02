@@ -167,7 +167,7 @@ The federal funds market in question is found [here](https://kalshi.com/markets/
 
 ## Data Collection
 
-To compare the two markets, I extracted the historical prices for three meetings over time: December, November, and September 2023. For Kalshi, I wrote a script in Python using their [API](https://github.com/Kalshi/kalshi-python). To transform the data for comparison, I used differences between contracts to infer the probability of a target range. For instance, if there is a $$90\%$$ that the rate is above $$5.25\%$$, and $$50\%$$ chance the rate is above $$5.50\%$$, we can infer a $$40\%$$ chance that the rate will be set at $$5.25-5.50\%$$.
+To compare the two markets, I extracted the historical prices for three meetings over time: December, November, and September 2023. For Kalshi, I wrote a script in Python using their [API](https://github.com/Kalshi/kalshi-python). To transform the data for comparison, I used differences between contracts to infer the probability of a target range. For instance, if there is a $$90\%$$ chance that the rate is above $$5.25\%$$, and $$50\%$$ chance the rate is above $$5.50\%$$, we can infer a $$40\%$$ chance that the rate will be set at $$5.25-5.50\%$$.
 
 The CME FedWatch provides CSV downloads for their historical data. Unfortunately, it only goes back to September of this year. While they do have an API, it is [paid](https://www.cmegroup.com/market-data/market-data-api.html) and requires contacting their team with a business email and phone number.
 
